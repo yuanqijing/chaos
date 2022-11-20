@@ -1,0 +1,10 @@
+tools:
+metrics:
+- mpstat:
+  description: |
+    "mpstat is a performance monitoring tool for Linux. It reports CPU utilization (percentage of time that the CPU or
+     CPUs were busy executing user, system, and idle process code) and other information. It can report information about
+     a single CPU, all CPUs, or a range of CPUs."
+  command: mpstat -o JSON -P ALL 1 1
+  url: https://man7.org/linux/man-pages/man1/mpstat.1.html
+

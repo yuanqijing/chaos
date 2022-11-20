@@ -1,0 +1,6 @@
+The term utilization is often used for operating systems to describe device usage, such as for the CPU and disk devices.
+Utilization can be time-based or capacity based.
+
+time based definition U = B / T
+where U is the utilization, B is the busy time, and T is the total time.
+
