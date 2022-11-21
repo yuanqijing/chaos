@@ -50,7 +50,33 @@ func TestCmdUtilOnCore(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			_ = CmdCPUUtilizationOnCore(0)
+			c := cmd{}
+			_ = c.UtilizationPerCore(0)
+		})
+	}
+}
+
+func TestCmdUtilSystemWide(t *testing.T) {
+	tests := []struct {
+		name    string
+		want    []byte
+		wantErr bool
+	}{
+		{
+			name: "test",
+			want: func() []byte {
+				t := apis.CpuUtilization{
+					Core: -1,
+				}
+				return []byte(t.String())
+			}(),
+			wantErr: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			c := cmd{}
+			_ = c.UtilizationSystemWide()
 		})
 	}
 }

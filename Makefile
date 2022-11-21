@@ -19,7 +19,7 @@ test: ## Run tests
 
 TEST_FN ?= .
 .PHONY: test-fn
-test-fn: ## Run tests for a specific function
+test-fn: ## Run tests for a specific function. Usage: make test-fn TEST_FN=funcName
 	go test -v ./... -run $(TEST_FN)
 
 
